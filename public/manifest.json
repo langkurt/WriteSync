@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Write Sync",
+  "name": "Real-time collaboration and document synchronization",
   "icons": [
     {
       "src": "favicon.ico",
