@@ -7,22 +7,17 @@ import Auth from "./components/Auth";
 
 const App = () => {
 
-    return (
-        <Router>
-            <Routes>
-                <Route exact path="/">
-                    element={
-                    <RequireAuth>
-                        <App2/>
-                    </RequireAuth>
-                }
-                </Route>
-                <Route exact path="/login">
-                    <Auth/>
-                </Route>
-            </Routes>
-        </Router>
-    );
+    return (<Router>
+        <Routes>
+            <Route exact path="/"
+                   element={<RequireAuth>
+                       <App2/>
+                   </RequireAuth>}>
+            </Route>
+            <Route exact path="/login" element={<Auth/>}>
+            </Route>
+        </Routes>
+    </Router>);
 };
 
 function RequireAuth({children}: { children: JSX.Element }) {
