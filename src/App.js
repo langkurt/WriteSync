@@ -1,9 +1,9 @@
 import logo from './resources/logo.svg';
 import {BrowserRouter as Router, Navigate, Route, Routes, useLocation} from 'react-router-dom'
 import './resources/App.css';
-import {auth} from "./firebase";
 import {useAuthState} from 'react-firebase-hooks/auth';
 import Auth from "./components/Auth";
+import {getAuth} from "firebase/auth";
 
 const App = () => {
 
@@ -23,7 +23,9 @@ const App = () => {
 function RequireAuth({children}: { children: JSX.Element }) {
 
     // firebase's auth state hook to manage user authentication
+    const auth = getAuth();
     const [user] = useAuthState(auth);
+    console.log("Rendering the Require Auth method. User is: " + user);
 
     let location = useLocation();
 
